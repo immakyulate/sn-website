@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SN International Group services — Executive Assistance, Marketing Support, Content Creation, and AI Operations. Remote support teams, matched with care." />
+  <title>Services — SN International Group</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:'#EFF6FF', 100:'#DBEAFE', 200:'#BFDBFE', 300:'#93C5FD', 400:'#60A5FA',
+              500:'#3B82F6', 600:'#2563EB', 700:'#1D4ED8', 800:'#1E40AF', 900:'#0F1F4F'
+            },
+            pinkpop:'#F97316', coral:'#FB7185', sun:'#F59E0B', sky:'#06B6D4', mint:'#10B981',
+            ink: { 900:'#0E0F1A', 800:'#1A1B2E', 700:'#2C2E45', 500:'#5C607A', 300:'#A6A9BC' },
+            cream:'#F8FBFF', mist:'#E0F2FE', line:'#DCE7F5'
+          },
+          fontFamily: {
+            display:['"Plus Jakarta Sans"','system-ui','sans-serif'],
+            sans:['Inter','system-ui','sans-serif'],
+            script:['Caveat','cursive']
+          },
+          boxShadow: {
+            pop:'0 14px 40px -10px rgba(37,99,235,0.35)',
+            soft:'0 1px 2px rgba(10,20,40,.04), 0 12px 36px -12px rgba(10,30,80,.12)',
+            ring:'0 0 0 1px #DCE7F5, 0 24px 60px -24px rgba(15,31,79,.25)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, sans-serif; color:#1A1B2E; background:#fff; -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4,.font-display { font-family:'Plus Jakarta Sans',system-ui,sans-serif; letter-spacing:-.02em; }
+    .script { font-family:Caveat,cursive; font-weight:700; }
+    .reveal { opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity:1; transform:none; }
+    .lift { transition: transform .25s ease, box-shadow .25s ease; }
+    .lift:hover { transform: translateY(-4px); box-shadow: 0 22px 46px -22px rgba(15,31,79,.22); }
+
+    .btn { display:inline-flex; align-items:center; gap:.55rem; padding:.95rem 1.4rem; border-radius:.85rem; font-weight:700; font-size:.95rem; transition: transform .15s ease, background-color .2s, color .2s, box-shadow .2s; }
+    .btn-primary { background: linear-gradient(135deg,#2563EB 0%,#06B6D4 100%); color:#fff; box-shadow: 0 14px 30px -8px rgba(37,99,235,.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -8px rgba(37,99,235,.6); }
+    .btn-dark { background:#0E0F1A; color:#fff; }
+    .btn-dark:hover { background:#1A1B2E; transform: translateY(-1px); }
+    .btn-outline { background:#fff; color:#1A1B2E; border:1px solid #DCE7F5; }
+    .btn-outline:hover { border-color:#2563EB; color:#1D4ED8; }
+    .btn-ghost { color:#1A1B2E; }
+    .btn-ghost:hover { color:#1D4ED8; }
+
+    .chip { display:inline-flex; align-items:center; gap:.45rem; padding:.55rem .9rem; border-radius:9999px; background:#fff; border:1px solid #DCE7F5; font-weight:600; font-size:.85rem; color:#2C2E45; transition: border-color .2s, transform .15s, box-shadow .2s; }
+    .chip:hover { border-color:#2563EB; color:#1D4ED8; transform: translateY(-1px); box-shadow: 0 6px 18px -6px rgba(37,99,235,.35); }
+    .chip-dot { width:.6rem; height:.6rem; border-radius:9999px; }
+
+    .icon-pad { display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:14px; }
+
+    .input { width:100%; padding:.85rem 1rem; border-radius:.85rem; border:1px solid #DCE7F5; background:#fff; font-size:.95rem; transition: border-color .2s, box-shadow .2s; }
+    .input:focus { outline:none; border-color:#2563EB; box-shadow: 0 0 0 4px rgba(37,99,235,.15); }
+
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { animation: marquee 32s linear infinite; }
+
+    #mobileMenu { transition: max-height .35s ease, opacity .25s ease; max-height:0; overflow:hidden; opacity:0; }
+    #mobileMenu.open { max-height:640px; opacity:1; }
+
+    section { scroll-margin-top: 84px; }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
+
+    /* Page hero gradient */
+    .page-hero {
+      background:
+        radial-gradient(700px 360px at 86% 14%, rgba(6,182,212,.18), transparent 60%),
+        radial-gradient(640px 360px at 8% 18%, rgba(37,99,235,.20), transparent 60%),
+        linear-gradient(180deg,#F8FBFF 0%,#EFF6FF 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top promo bar -->
+  <div class="bg-ink-900 text-white text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+      <p class="hidden sm:flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sun"></i>
+        <span>Now matching teams in 7 days for AU & US founders.</span>
+      </p>
+      <p class="sm:hidden flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sun"></i>
+        <span>Matched in 7 days.</span>
+      </p>
+      <a href="index.html#contact" class="inline-flex items-center gap-1.5 hover:text-sun transition">
+        <span class="hidden sm:inline">Connect to support</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sticky nav -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-18">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl text-white font-display font-extrabold tracking-tight" style="background: linear-gradient(135deg,#2563EB 0%,#06B6D4 100%);">SN</span>
+          <span class="font-display font-extrabold text-ink-900 text-lg hidden sm:inline">SN International <span class="text-brand-600">Group</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-ink-700">
+          <a href="index.html" class="hover:text-brand-600 transition">Home</a>
+          <a href="services.html" class="text-brand-700">Services</a>
+          <a href="about.html" class="hover:text-brand-600 transition">About Us</a>
+          <a href="about.html#team" class="hover:text-brand-600 transition">Meet the Team</a>
+          <a href="index.html#contact" class="hover:text-brand-600 transition">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#" class="btn btn-ghost">Log in</a>
+          <a href="index.html#contact" class="btn btn-primary">
+            Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-ink-900 hover:bg-mist" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="lg:hidden">
+        <div class="pb-4 pt-1 space-y-1 text-sm font-semibold">
+          <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Home</a>
+          <a href="services.html" class="block px-3 py-2 rounded-lg hover:bg-mist text-brand-700">Services</a>
+          <a href="about.html" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">About Us</a>
+          <a href="about.html#team" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Meet the Team</a>
+          <a href="index.html#contact" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Contact</a>
+          <a href="index.html#contact" class="btn btn-primary w-full justify-center mt-2">Connect to support</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden page-hero pt-14 pb-16 lg:pt-20 lg:pb-20">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl reveal">
+          <span class="chip"><span class="chip-dot bg-mint"></span>Service tracks</span>
+          <h1 class="mt-4 font-extrabold text-ink-900 text-4xl sm:text-6xl lg:text-7xl leading-[1.05]">
+            Pick a track. <span class="script text-brand-600 text-5xl sm:text-7xl lg:text-8xl align-middle">We'll match</span> the team to it.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-ink-500 max-w-2xl">
+            Four service tracks, shaped around your workflow, coverage window, and communication style. Start with the function you need most — we scale the pod from there.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-2.5">
+            <a href="#executive-assistance" class="chip"><span class="chip-dot bg-brand-500"></span>Executive Assistance</a>
+            <a href="#marketing-support"   class="chip"><span class="chip-dot bg-pinkpop"></span>Marketing Support</a>
+            <a href="#content-creation"    class="chip"><span class="chip-dot bg-sun"></span>Content Creation</a>
+            <a href="#ai-operations"       class="chip"><span class="chip-dot bg-sky"></span>AI Operations</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE ASSISTANCE -->
+    <section id="executive-assistance" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-5 reveal lg:sticky lg:top-24">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-600">01 / Executive Assistance</span>
+            <h2 class="mt-3 font-extrabold text-ink-900 text-3xl sm:text-5xl leading-[1.05]">
+              Inbox, calendar, admin, and follow-through — handled with <span class="script text-brand-600 text-5xl sm:text-6xl">precision</span>.
+            </h2>
+            <p class="mt-5 text-ink-500 text-lg">Dedicated executive assistants who manage inboxes, calendars, reporting, travel coordination, SOP upkeep, and recurring admin so founders and operators can stay focused on growth.</p>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-brand-50 text-brand-700 px-3 py-1.5 font-semibold">Coverage · AU / US</span>
+              <span class="rounded-full bg-brand-50 text-brand-700 px-3 py-1.5 font-semibold">Coverage windows · 7 days</span>
+              <span class="rounded-full bg-brand-50 text-brand-700 px-3 py-1.5 font-semibold">Typical launch · 7 days</span>
+            </div>
+            <a href="index.html#contact?service=executive-assistance" class="mt-6 inline-flex btn btn-primary">Request this service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+            <div class="lift rounded-3xl bg-cream border border-line p-6 reveal">
+              <span class="icon-pad bg-brand-50 text-brand-600"><i data-lucide="inbox" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Calendar &amp; inbox management</h3>
+              <p class="mt-2 text-ink-500 text-sm">Triage, drafted replies, scheduling, and meeting prep — your inbox stays at zero, your calendar stays sane.</p>
+            </div>
+            <div class="lift rounded-3xl bg-cream border border-line p-6 reveal">
+              <span class="icon-pad bg-brand-50 text-brand-600"><i data-lucide="file-text" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Reporting &amp; documentation</h3>
+              <p class="mt-2 text-ink-500 text-sm">Recurring reports, meeting notes, and SOP upkeep — every record where it should be, when it should be there.</p>
+            </div>
+            <div class="lift rounded-3xl bg-cream border border-line p-6 reveal">
+              <span class="icon-pad bg-brand-50 text-brand-600"><i data-lucide="search" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Research &amp; coordination</h3>
+              <p class="mt-2 text-ink-500 text-sm">Vendor sourcing, travel logistics, project chasing — the kind of work that's never glamorous but always essential.</p>
+            </div>
+            <div class="lift rounded-3xl bg-cream border border-line p-6 reveal">
+              <span class="icon-pad bg-brand-50 text-brand-600"><i data-lucide="users" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Executive support pods</h3>
+              <p class="mt-2 text-ink-500 text-sm">Need more than one EA? We build small, coordinated pods that share standards, tools, and a single point of contact.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKETING SUPPORT -->
+    <section id="marketing-support" class="py-20 lg:py-28" style="background:linear-gradient(180deg,#FFF7ED 0%, #FFFFFF 100%);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5 order-2 lg:order-1">
+            <div class="lift rounded-3xl bg-white border border-line p-6 reveal">
+              <span class="icon-pad bg-pinkpop/10 text-pinkpop"><i data-lucide="megaphone" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Campaign coordination</h3>
+              <p class="mt-2 text-ink-500 text-sm">Project management for launches, briefs, calendars and stakeholder sign-offs — every campaign ships on time.</p>
+            </div>
+            <div class="lift rounded-3xl bg-white border border-line p-6 reveal">
+              <span class="icon-pad bg-pinkpop/10 text-pinkpop"><i data-lucide="calendar-clock" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Social &amp; email scheduling</h3>
+              <p class="mt-2 text-ink-500 text-sm">Editorial calendars, drafting, scheduling and QA across LinkedIn, Instagram, and your ESP of choice.</p>
+            </div>
+            <div class="lift rounded-3xl bg-white border border-line p-6 reveal">
+              <span class="icon-pad bg-pinkpop/10 text-pinkpop"><i data-lucide="bar-chart-3" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Marketing admin &amp; reporting</h3>
+              <p class="mt-2 text-ink-500 text-sm">CRM hygiene, attribution checks, weekly performance reports — the unsexy work that makes the rest possible.</p>
+            </div>
+            <div class="lift rounded-3xl bg-white border border-line p-6 reveal">
+              <span class="icon-pad bg-pinkpop/10 text-pinkpop"><i data-lucide="list-checks" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Research &amp; list preparation</h3>
+              <p class="mt-2 text-ink-500 text-sm">Outbound research, prospect enrichment, competitor scans — research-grade lists, not scraped junk.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-5 reveal lg:sticky lg:top-24 order-1 lg:order-2">
+            <span class="text-xs font-bold uppercase tracking-widest text-pinkpop">02 / Marketing Support</span>
+            <h2 class="mt-3 font-extrabold text-ink-900 text-3xl sm:text-5xl leading-[1.05]">
+              Execution muscle behind your <span class="script text-pinkpop text-5xl sm:text-6xl">strategy</span>.
+            </h2>
+            <p class="mt-5 text-ink-500 text-lg">Flexible support for marketing teams that need help with campaign coordination, CRM updates, social scheduling, reporting, research, and recurring execution work.</p>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-pinkpop/10 text-pinkpop px-3 py-1.5 font-semibold">Campaign rhythm · Weekly</span>
+              <span class="rounded-full bg-pinkpop/10 text-pinkpop px-3 py-1.5 font-semibold">Ramp time · 2 weeks</span>
+            </div>
+            <a href="index.html#contact?service=marketing-support" class="mt-6 inline-flex btn btn-primary">Request this service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT CREATION -->
+    <section id="content-creation" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-5 reveal lg:sticky lg:top-24">
+            <span class="text-xs font-bold uppercase tracking-widest" style="color:#0E7490;">03 / Content Creation</span>
+            <h2 class="mt-3 font-extrabold text-ink-900 text-3xl sm:text-5xl leading-[1.05]">
+              A reliable content engine that <span class="script text-sun text-5xl sm:text-6xl">ships</span>, week after week.
+            </h2>
+            <p class="mt-5 text-ink-500 text-lg">Content support for founders and teams that need writing assistance, asset preparation, publishing help, repurposing, and dependable production follow-through.</p>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full px-3 py-1.5 font-semibold" style="background:#FEF3C7;color:#92400E;">Output types · Copy / Visuals</span>
+              <span class="rounded-full px-3 py-1.5 font-semibold" style="background:#FEF3C7;color:#92400E;">Use cases · B2B / Agency</span>
+            </div>
+            <a href="index.html#contact?service=content-creation" class="mt-6 inline-flex btn btn-primary">Request this service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+            <div class="lift rounded-3xl border border-line p-6 reveal" style="background:#FFFBEB;">
+              <span class="icon-pad bg-white shadow-soft"><i data-lucide="pen-tool" class="w-7 h-7" style="color:#92400E;"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Content drafting support</h3>
+              <p class="mt-2 text-ink-500 text-sm">Long-form copy, scripts, emails — drafted to your voice and shipped on a predictable cadence.</p>
+            </div>
+            <div class="lift rounded-3xl border border-line p-6 reveal" style="background:#FFFBEB;">
+              <span class="icon-pad bg-white shadow-soft"><i data-lucide="image" class="w-7 h-7" style="color:#92400E;"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Asset preparation</h3>
+              <p class="mt-2 text-ink-500 text-sm">Slide decks, social tiles, banners and lightweight design — production-ready assets, on brand.</p>
+            </div>
+            <div class="lift rounded-3xl border border-line p-6 reveal" style="background:#FFFBEB;">
+              <span class="icon-pad bg-white shadow-soft"><i data-lucide="repeat-2" class="w-7 h-7" style="color:#92400E;"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Repurposing workflows</h3>
+              <p class="mt-2 text-ink-500 text-sm">One podcast → three blogs, ten LinkedIn posts, and a newsletter. We turn signal into reach.</p>
+            </div>
+            <div class="lift rounded-3xl border border-line p-6 reveal" style="background:#FFFBEB;">
+              <span class="icon-pad bg-white shadow-soft"><i data-lucide="upload-cloud" class="w-7 h-7" style="color:#92400E;"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-ink-900">Publishing coordination</h3>
+              <p class="mt-2 text-ink-500 text-sm">CMS, scheduling, review loops and approvals — content moves from draft to live with zero chasing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI OPERATIONS -->
+    <section id="ai-operations" class="py-20 lg:py-28 bg-ink-900 text-white relative overflow-hidden">
+      <div class="absolute -top-32 -right-32 w-[28rem] h-[28rem] rounded-full" style="background: radial-gradient(circle, rgba(6,182,212,.4), transparent 70%);" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5 order-2 lg:order-1">
+            <div class="lift rounded-3xl bg-white/5 border border-white/10 p-6 reveal">
+              <span class="icon-pad bg-sky/15 text-sky"><i data-lucide="library" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-white">Prompt &amp; SOP libraries</h3>
+              <p class="mt-2 text-white/70 text-sm">A curated, version-controlled library of prompts and SOPs your team can re-use — no more reinventing every time.</p>
+            </div>
+            <div class="lift rounded-3xl bg-white/5 border border-white/10 p-6 reveal">
+              <span class="icon-pad bg-sky/15 text-sky"><i data-lucide="workflow" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-white">AI workflow coordination</h3>
+              <p class="mt-2 text-white/70 text-sm">We connect the tools you already pay for — and add a thin human layer of QA so output stays trustworthy.</p>
+            </div>
+            <div class="lift rounded-3xl bg-white/5 border border-white/10 p-6 reveal">
+              <span class="icon-pad bg-sky/15 text-sky"><i data-lucide="search-check" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-white">Research &amp; synthesis support</h3>
+              <p class="mt-2 text-white/70 text-sm">Briefs, market scans, customer interview synthesis — AI-accelerated, human-validated, decision-ready.</p>
+            </div>
+            <div class="lift rounded-3xl bg-white/5 border border-white/10 p-6 reveal">
+              <span class="icon-pad bg-sky/15 text-sky"><i data-lucide="shield-check" class="w-7 h-7"></i></span>
+              <h3 class="mt-4 font-display font-extrabold text-lg text-white">Quality &amp; knowledge maintenance</h3>
+              <p class="mt-2 text-white/70 text-sm">Knowledge bases that stay current, prompts that stay tested, output that stays accurate as your team grows.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-5 reveal lg:sticky lg:top-24 order-1 lg:order-2">
+            <span class="text-xs font-bold uppercase tracking-widest text-sky">04 / AI Operations</span>
+            <h2 class="mt-3 font-extrabold text-3xl sm:text-5xl leading-[1.05]">
+              <span class="script text-sky text-5xl sm:text-6xl">Human-led</span> AI workflow support.
+            </h2>
+            <p class="mt-5 text-white/75 text-lg">Operational support for teams adopting AI into day-to-day work, including prompt libraries, workflow documentation, QA checks, knowledge-base upkeep, and tool coordination.</p>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-white/10 px-3 py-1.5 font-semibold">Workflow type · Ops / Research</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 font-semibold">Team fit · Founders / Ops</span>
+            </div>
+            <a href="index.html#contact?service=ai-operations" class="mt-6 inline-flex btn btn-primary">Request this service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="py-20 lg:py-28 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl reveal">
+          <span class="chip"><span class="chip-dot bg-pinkpop"></span>How we work</span>
+          <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl leading-[1.05]">
+            From brief to <span class="script text-pinkpop text-5xl sm:text-6xl">embedded</span> teammate in a week.
+          </h2>
+        </div>
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="lift rounded-3xl bg-white border border-line p-6 reveal">
+            <span class="icon-pad bg-brand-500 text-white">01</span>
+            <h3 class="mt-4 font-display font-extrabold text-xl text-ink-900">Brief</h3>
+            <p class="mt-2 text-ink-500 text-sm">Tell us the workflow you want supported, the coverage window, and the communication style your team already runs on.</p>
+          </div>
+          <div class="lift rounded-3xl bg-white border border-line p-6 reveal">
+            <span class="icon-pad bg-pinkpop text-white">02</span>
+            <h3 class="mt-4 font-display font-extrabold text-xl text-ink-900">Match</h3>
+            <p class="mt-2 text-ink-500 text-sm">We shortlist 2–3 specialists shaped to the brief. You meet them, choose, and confirm scope and rhythm.</p>
+          </div>
+          <div class="lift rounded-3xl bg-white border border-line p-6 reveal">
+            <span class="icon-pad text-ink-900" style="background:#F59E0B;">03</span>
+            <h3 class="mt-4 font-display font-extrabold text-xl text-ink-900">Onboard</h3>
+            <p class="mt-2 text-ink-500 text-sm">SOPs, tools, access. By day five your teammate is shipping work — not asking where things live.</p>
+          </div>
+          <div class="lift rounded-3xl bg-white border border-line p-6 reveal">
+            <span class="icon-pad text-white" style="background:#06B6D4;">04</span>
+            <h3 class="mt-4 font-display font-extrabold text-xl text-ink-900">Operate</h3>
+            <p class="mt-2 text-ink-500 text-sm">Weekly cadence, monthly reviews. Need to grow the pod? Add specialists in days, not months.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT MODELS -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl reveal">
+          <span class="chip"><span class="chip-dot bg-brand-500"></span>Ways to engage</span>
+          <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl leading-[1.05]">
+            Three ways to bring SN <span class="text-brand-600">into your team</span>.
+          </h2>
+          <p class="mt-5 text-ink-500 text-lg">Pick the engagement that matches your stage. You can shift between models as your needs change — no contractual gymnastics.</p>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-3 gap-5">
+          <div class="lift rounded-3xl bg-cream border border-line p-7 reveal">
+            <div class="text-xs uppercase tracking-widest font-bold text-ink-500">Try us</div>
+            <h3 class="mt-2 font-display font-extrabold text-2xl text-ink-900">Part-time</h3>
+            <p class="mt-2 text-ink-500 text-sm">10–20 hours per week. The fastest way to validate fit before scaling up.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mint"></i> One specialist, one track</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mint"></i> Weekly check-in cadence</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mint"></i> Month-to-month, no lock-in</li>
+            </ul>
+            <a href="index.html#contact" class="mt-6 inline-flex items-center gap-1.5 font-bold text-brand-700 hover:translate-x-0.5 transition">Start part-time <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="lift rounded-3xl p-7 reveal text-white relative overflow-hidden" style="background:linear-gradient(135deg,#2563EB 0%, #1E40AF 100%);">
+            <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-white/10 blur-2xl" aria-hidden="true"></div>
+            <div class="relative">
+              <div class="text-xs uppercase tracking-widest font-bold text-white/80">Most popular</div>
+              <h3 class="mt-2 font-display font-extrabold text-2xl">Full-time</h3>
+              <p class="mt-2 text-white/85 text-sm">A dedicated specialist embedded full-time in your team's tools and rituals.</p>
+              <ul class="mt-5 space-y-2 text-sm">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sun"></i> 40 hours per week</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sun"></i> Daily standups, full Slack presence</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sun"></i> Quarterly performance reviews</li>
+              </ul>
+              <a href="index.html#contact" class="mt-6 inline-flex items-center gap-1.5 font-bold text-sun hover:translate-x-0.5 transition">Build a full-time role <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="lift rounded-3xl bg-cream border border-line p-7 reveal">
+            <div class="text-xs uppercase tracking-widest font-bold text-ink-500">For scale</div>
+            <h3 class="mt-2 font-display font-extrabold text-2xl text-ink-900">Pod</h3>
+            <p class="mt-2 text-ink-500 text-sm">A coordinated team across multiple service tracks, led by a single SN account lead.</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mint"></i> 2–6 specialists</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mint"></i> Cross-track coordination</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mint"></i> Single point of contact</li>
+            </ul>
+            <a href="index.html#contact" class="mt-6 inline-flex items-center gap-1.5 font-bold text-brand-700 hover:translate-x-0.5 transition">Design a pod <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 lg:py-24 bg-cream">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center reveal">
+          <span class="chip">FAQ</span>
+          <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl">Common questions</h2>
+        </div>
+        <div class="mt-10 divide-y divide-line border border-line rounded-3xl bg-white">
+          <details class="group p-6">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900">How fast can I get matched?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-brand-700 transition group-open:rotate-45"></i>
+            </summary>
+            <p class="mt-3 text-ink-500 text-sm leading-relaxed">For most tracks, you'll meet 2–3 pre-vetted specialists within 24 hours of your discovery call. Typical launch is 7 days from brief.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900">What if it's not the right fit?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-brand-700 transition group-open:rotate-45"></i>
+            </summary>
+            <p class="mt-3 text-ink-500 text-sm leading-relaxed">Every engagement is backed by our re-match guarantee. If a teammate isn't working out — first 90 days or anytime after — we re-match at no extra cost.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900">Can a single SN engagement cover more than one track?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-brand-700 transition group-open:rotate-45"></i>
+            </summary>
+            <p class="mt-3 text-ink-500 text-sm leading-relaxed">Yes — most growing teams start with one track and expand. Pods coordinate across tracks under a single SN account lead.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900">How is pricing structured?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-brand-700 transition group-open:rotate-45"></i>
+            </summary>
+            <p class="mt-3 text-ink-500 text-sm leading-relaxed">A simple, transparent monthly fee per role — based on track, seniority and hours per week. No recruitment fees, no mark-up surprises, no long lock-ins.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900">How do you handle data security?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-brand-700 transition group-open:rotate-45"></i>
+            </summary>
+            <p class="mt-3 text-ink-500 text-sm leading-relaxed">Every team member signs an NDA and IP-assignment. We follow ISO-aligned access controls, password-manager standards, and on-request region-locked workstations.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="py-16 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative rounded-[2rem] p-8 sm:p-12 lg:p-16 overflow-hidden text-white" style="background: linear-gradient(135deg,#2563EB 0%, #06B6D4 60%, #F59E0B 110%);">
+          <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/15 blur-3xl" aria-hidden="true"></div>
+          <div class="relative grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 reveal">
+              <h2 class="font-extrabold text-3xl sm:text-5xl leading-[1.05]">One brief. <span class="script text-white/95 text-5xl sm:text-7xl">One week.</span> The right team in your corner.</h2>
+              <p class="mt-4 text-white/90 max-w-2xl text-lg">Tell us the track and the workflow. We'll come back with a shortlist tailored to your team — usually the same day.</p>
+            </div>
+            <div class="lg:col-span-4 flex lg:justify-end reveal">
+              <a href="index.html#contact" class="btn btn-dark">Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-ink-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5">
+          <a href="index.html" class="flex items-center gap-2.5">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl text-white font-display font-extrabold" style="background: linear-gradient(135deg,#2563EB 0%,#06B6D4 100%);">SN</span>
+            <span class="font-display font-extrabold text-white text-lg">SN International <span class="text-brand-300">Group</span></span>
+          </a>
+          <p class="mt-4 text-white/70 max-w-sm">Remote support teams, matched with care. Executive Assistance, Marketing Support, Content Creation, and AI Operations — built around your workflow.</p>
+          <a href="index.html#contact" class="mt-6 inline-flex btn btn-primary">Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="lg:col-span-3">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Services</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="services.html#executive-assistance" class="hover:text-white">Executive Assistance</a></li>
+            <li><a href="services.html#marketing-support" class="hover:text-white">Marketing Support</a></li>
+            <li><a href="services.html#content-creation" class="hover:text-white">Content Creation</a></li>
+            <li><a href="services.html#ai-operations" class="hover:text-white">AI Operations</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Quick links</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li><a href="about.html" class="hover:text-white">About Us</a></li>
+            <li><a href="about.html#team" class="hover:text-white">Meet the Team</a></li>
+            <li><a href="index.html#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Contact</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="mailto:info@sngroup.com.au" class="hover:text-white">info@sngroup.com.au</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/55">
+        <p>© <span id="year"></span> SN International Group. All rights reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+          <a href="#" class="hover:text-white">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

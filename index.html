@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SN International Group — Remote support teams, matched with care. Executive Assistance, Marketing Support, Content Creation, and AI Operations." />
+  <title>SN International Group — Remote support teams, matched with care</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#EFF6FF',
+              100: '#DBEAFE',
+              200: '#BFDBFE',
+              300: '#93C5FD',
+              400: '#60A5FA',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+              800: '#1E40AF',
+              900: '#0F1F4F'
+            },
+            pinkpop: '#F97316',
+            coral:   '#FF6B6B',
+            sun:     '#F59E0B',
+            sky:     '#06B6D4',
+            mint:    '#10B981',
+            ink: {
+              900: '#0E0F1A',
+              800: '#1A1B2E',
+              700: '#2C2E45',
+              500: '#5C607A',
+              300: '#A6A9BC'
+            },
+            cream:  '#F8FBFF',
+            mist:   '#E0F2FE',
+            line:   '#DCE7F5'
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+            script:  ['Caveat', 'cursive']
+          },
+          boxShadow: {
+            pop: '0 14px 40px -10px rgba(37,99,235,0.35)',
+            soft:'0 1px 2px rgba(10,20,40,.04), 0 12px 36px -12px rgba(10,30,80,.12)',
+            ring:'0 0 0 1px #E9E5F7, 0 24px 60px -24px rgba(15,31,79,.25)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, sans-serif; color: #1A1B2E; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, .font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -.02em; }
+    .script { font-family: Caveat, cursive; font-weight: 700; }
+
+    /* Hero gradient + grain */
+    .hero-bg {
+      background:
+        radial-gradient(900px 500px at 88% 12%, rgba(255,79,163,.18), transparent 60%),
+        radial-gradient(700px 460px at 8% 18%, rgba(54,204,255,.20), transparent 60%),
+        radial-gradient(600px 600px at 50% 110%, rgba(255,200,61,.15), transparent 60%),
+        linear-gradient(180deg, #FBFAFF 0%, #F4F1FF 100%);
+    }
+    .blob {
+      position: absolute; border-radius: 9999px; filter: blur(60px); opacity: .55; pointer-events: none;
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    /* Lift */
+    .lift { transition: transform .25s ease, box-shadow .25s ease; }
+    .lift:hover { transform: translateY(-4px); box-shadow: 0 22px 46px -22px rgba(15,31,79,.22); }
+
+    /* Buttons */
+    .btn { display:inline-flex; align-items:center; gap:.55rem; padding:.95rem 1.4rem; border-radius:.85rem; font-weight:700; font-size:.95rem; transition: transform .15s ease, background-color .2s, color .2s, box-shadow .2s; }
+    .btn-primary { background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%); color:#fff; box-shadow: 0 14px 30px -8px rgba(37,99,235,.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -8px rgba(37,99,235,.6); }
+    .btn-dark { background:#0E0F1A; color:#fff; }
+    .btn-dark:hover { background:#1A1B2E; transform: translateY(-1px); }
+    .btn-outline { background:#fff; color:#1A1B2E; border:1px solid #E9E5F7; }
+    .btn-outline:hover { border-color:#2563EB; color:#1E40AF; }
+    .btn-ghost { color:#1A1B2E; }
+    .btn-ghost:hover { color:#1E40AF; }
+
+    /* Service chip */
+    .chip { display:inline-flex; align-items:center; gap:.45rem; padding:.55rem .9rem; border-radius:9999px; background:#fff; border:1px solid #E9E5F7; font-weight:600; font-size:.85rem; color:#2C2E45; transition: border-color .2s, transform .15s, box-shadow .2s; }
+    .chip:hover { border-color:#2563EB; color:#1E40AF; transform: translateY(-1px); box-shadow: 0 6px 18px -6px rgba(123,104,238,.35); }
+    .chip-dot { width:.6rem; height:.6rem; border-radius:9999px; }
+
+    /* Marquee */
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { animation: marquee 32s linear infinite; }
+
+    /* Form */
+    .input { width:100%; padding:.85rem 1rem; border-radius:.85rem; border:1px solid #E9E5F7; background:#fff; font-size:.95rem; transition: border-color .2s, box-shadow .2s; }
+    .input:focus { outline:none; border-color:#2563EB; box-shadow: 0 0 0 4px rgba(37,99,235,.15); }
+
+    /* Bento icon chip */
+    .icon-pad { display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:14px; }
+
+    /* Mobile menu */
+    #mobileMenu { transition: max-height .35s ease, opacity .25s ease; max-height:0; overflow:hidden; opacity:0; }
+    #mobileMenu.open { max-height:640px; opacity:1; }
+
+    section { scroll-margin-top: 84px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+      .reveal { opacity:1; transform:none; transition:none; }
+    }
+
+    /* Underline accent for hero "right" word */
+    .ink-underline { position: relative; display: inline-block; }
+    .ink-underline svg { position: absolute; left: 0; right: 0; bottom: -.2em; width: 100%; height: .55em; }
+  </style>
+</head>
+<body>
+
+  <!-- Top promo bar -->
+  <div class="bg-ink-900 text-white text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+      <p class="hidden sm:flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sun"></i>
+        <span>Now matching teams in 7 days for AU & US founders.</span>
+      </p>
+      <p class="sm:hidden flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sun"></i>
+        <span>Matched in 7 days.</span>
+      </p>
+      <a href="#contact" class="inline-flex items-center gap-1.5 hover:text-sun transition">
+        <span class="hidden sm:inline">Connect to support</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sticky nav -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-18">
+        <a href="#top" class="flex items-center gap-2.5">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl text-white font-display font-extrabold tracking-tight" style="background: linear-gradient(135deg,#2563EB 0%,#06B6D4 100%);">SN</span>
+          <span class="font-display font-extrabold text-ink-900 text-lg hidden sm:inline">SN International <span class="text-brand-600">Group</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-ink-700">
+          <a href="#top" class="hover:text-brand-600 transition">Home</a>
+          <div class="relative group">
+            <button class="inline-flex items-center gap-1 hover:text-brand-600 transition">
+              Services <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition absolute left-1/2 -translate-x-1/2 top-full pt-3 w-72">
+              <div class="rounded-2xl bg-white border border-line shadow-soft p-2">
+                <a href="services.html" class="flex items-center justify-between gap-3 p-3 rounded-xl bg-cream hover:bg-mist transition mb-1">
+                  <span class="font-bold text-ink-900">View all services</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 text-brand-600"></i>
+                </a>
+                <a href="#services" class="flex items-start gap-3 p-3 rounded-xl hover:bg-mist transition">
+                  <span class="icon-pad bg-brand-50 text-brand-600 w-10 h-10 rounded-xl"><i data-lucide="inbox" class="w-5 h-5"></i></span>
+                  <span><span class="block font-semibold text-ink-900">Executive Assistance</span><span class="block text-xs text-ink-500">Inbox, calendar, admin, and more</span></span>
+                </a>
+                <a href="#services" class="flex items-start gap-3 p-3 rounded-xl hover:bg-mist transition">
+                  <span class="icon-pad bg-pinkpop/10 text-pinkpop w-10 h-10 rounded-xl"><i data-lucide="megaphone" class="w-5 h-5"></i></span>
+                  <span><span class="block font-semibold text-ink-900">Marketing Support</span><span class="block text-xs text-ink-500">Campaigns, CRM, social, reporting</span></span>
+                </a>
+                <a href="#services" class="flex items-start gap-3 p-3 rounded-xl hover:bg-mist transition">
+                  <span class="icon-pad bg-sun/15 text-sun w-10 h-10 rounded-xl" style="color:#0E7490;"><i data-lucide="pen-tool" class="w-5 h-5"></i></span>
+                  <span><span class="block font-semibold text-ink-900">Content Creation</span><span class="block text-xs text-ink-500">Copy, assets, repurposing, publishing</span></span>
+                </a>
+                <a href="#services" class="flex items-start gap-3 p-3 rounded-xl hover:bg-mist transition">
+                  <span class="icon-pad bg-sky/10 text-sky w-10 h-10 rounded-xl" style="color:#0369A1;"><i data-lucide="bot" class="w-5 h-5"></i></span>
+                  <span><span class="block font-semibold text-ink-900">AI Operations</span><span class="block text-xs text-ink-500">Prompts, SOPs, workflow QA</span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="hover:text-brand-600 transition">About Us</a>
+          <a href="about.html#team" class="hover:text-brand-600 transition">Meet the Team</a>
+          <a href="#contact" class="hover:text-brand-600 transition">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#" class="btn btn-ghost">Log in</a>
+          <a href="#contact" class="btn btn-primary">
+            Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-ink-900 hover:bg-mist" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="lg:hidden">
+        <div class="pb-4 pt-1 space-y-1 text-sm font-semibold">
+          <a href="#top" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Home</a>
+          <a href="#services" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Services</a>
+          <a href="#" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">About Us</a>
+          <a href="#" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Meet the Team</a>
+          <a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Contact</a>
+          <a href="#contact" class="btn btn-primary w-full justify-center mt-2">Connect to support</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden hero-bg pt-14 pb-20 lg:pt-20 lg:pb-28">
+      <div class="blob bg-pinkpop" style="width:380px;height:380px;top:-80px;right:-80px;"></div>
+      <div class="blob bg-sky" style="width:320px;height:320px;bottom:-100px;left:-60px;"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto reveal">
+          <span class="chip">
+            <span class="chip-dot bg-mint"></span>
+            Remote support, matched with care
+          </span>
+          <h1 class="mt-5 font-extrabold text-ink-900 text-4xl sm:text-6xl lg:text-7xl leading-[1.05]">
+            You're <span class="ink-underline">one brief
+              <svg viewBox="0 0 200 18" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M2,12 C40,4 100,4 198,12" fill="none" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </span>
+            away from <br class="hidden sm:block"/>
+            <span class="script text-brand-600 text-5xl sm:text-7xl lg:text-8xl align-middle">the right</span>
+            executive support team.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-ink-500 max-w-2xl mx-auto">
+            We build dependable offshore support around your workflow — from <span class="font-semibold text-ink-900">executive assistance</span> and <span class="font-semibold text-ink-900">marketing support</span> to <span class="font-semibold text-ink-900">content creation</span> and <span class="font-semibold text-ink-900">AI operations</span>.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="#contact" class="btn btn-primary">
+              Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#services" class="btn btn-outline">
+              Explore service tracks
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-2.5">
+            <a href="#services" class="chip"><span class="chip-dot bg-brand-500"></span>Executive Assistance</a>
+            <a href="#services" class="chip"><span class="chip-dot bg-pinkpop"></span>Marketing Support</a>
+            <a href="#services" class="chip"><span class="chip-dot bg-sun"></span>Content Creation</a>
+            <a href="#services" class="chip"><span class="chip-dot bg-sky"></span>AI Operations</a>
+          </div>
+        </div>
+
+        <!-- Hero product visual: bento preview -->
+        <div class="relative mt-14 lg:mt-20 reveal">
+          <div class="absolute -inset-4 bg-gradient-to-br from-brand-500/10 to-pinkpop/10 rounded-[2rem] blur-2xl" aria-hidden="true"></div>
+          <div class="relative grid grid-cols-1 md:grid-cols-12 gap-4 max-w-6xl mx-auto">
+            <!-- Big card -->
+            <div class="md:col-span-7 rounded-3xl bg-white shadow-ring p-6 sm:p-8 border border-line">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="icon-pad bg-brand-500 text-white"><i data-lucide="users" class="w-6 h-6"></i></span>
+                  <div>
+                    <div class="font-display font-bold text-ink-900">Your support pod</div>
+                    <div class="text-xs text-ink-500">Live · 4 specialists</div>
+                  </div>
+                </div>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-mint/15 text-emerald-700 font-semibold inline-flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                </span>
+              </div>
+              <div class="mt-6 grid sm:grid-cols-2 gap-3">
+                <div class="flex items-center gap-3 p-3 rounded-2xl border border-line">
+                  <span class="icon-pad bg-brand-50 text-brand-600 w-10 h-10 rounded-xl"><i data-lucide="inbox" class="w-5 h-5"></i></span>
+                  <div class="min-w-0">
+                    <div class="text-sm font-semibold text-ink-900 truncate">Maya R.</div>
+                    <div class="text-xs text-ink-500">EA · 40h/wk</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-2xl border border-line">
+                  <span class="icon-pad bg-pinkpop/10 text-pinkpop w-10 h-10 rounded-xl"><i data-lucide="megaphone" class="w-5 h-5"></i></span>
+                  <div class="min-w-0">
+                    <div class="text-sm font-semibold text-ink-900 truncate">James T.</div>
+                    <div class="text-xs text-ink-500">Marketing · 30h/wk</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-2xl border border-line">
+                  <span class="icon-pad bg-sun/15 w-10 h-10 rounded-xl" style="color:#0E7490;"><i data-lucide="pen-tool" class="w-5 h-5"></i></span>
+                  <div class="min-w-0">
+                    <div class="text-sm font-semibold text-ink-900 truncate">Lina K.</div>
+                    <div class="text-xs text-ink-500">Content · 25h/wk</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-2xl border border-line">
+                  <span class="icon-pad bg-sky/10 w-10 h-10 rounded-xl" style="color:#0369A1;"><i data-lucide="bot" class="w-5 h-5"></i></span>
+                  <div class="min-w-0">
+                    <div class="text-sm font-semibold text-ink-900 truncate">Priya A.</div>
+                    <div class="text-xs text-ink-500">AI Ops · 20h/wk</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 flex items-center justify-between rounded-2xl p-3" style="background:linear-gradient(90deg,#F4F1FF, #E0F2FE);">
+                <div>
+                  <div class="text-xs text-ink-500">Hours saved this week</div>
+                  <div class="text-2xl font-display font-extrabold text-ink-900">62 hrs</div>
+                </div>
+                <div class="flex items-end gap-1.5 h-10">
+                  <span class="w-2 rounded bg-brand-300" style="height:30%"></span>
+                  <span class="w-2 rounded bg-brand-400" style="height:55%"></span>
+                  <span class="w-2 rounded bg-brand-500" style="height:42%"></span>
+                  <span class="w-2 rounded bg-brand-600" style="height:70%"></span>
+                  <span class="w-2 rounded bg-pinkpop" style="height:60%"></span>
+                  <span class="w-2 rounded bg-sun" style="height:82%"></span>
+                  <span class="w-2 rounded bg-sky" style="height:95%"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right column smaller cards -->
+            <div class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4">
+              <div class="rounded-3xl p-6 text-white shadow-soft" style="background: linear-gradient(135deg,#2563EB 0%, #1E40AF 100%);">
+                <div class="text-xs uppercase tracking-widest font-bold text-white/80">Coverage</div>
+                <div class="mt-2 text-3xl font-display font-extrabold">AU / US</div>
+                <p class="mt-2 text-sm text-white/85">Time-zone aligned support, 7 days a week.</p>
+              </div>
+              <div class="rounded-3xl p-6 shadow-soft" style="background: linear-gradient(135deg,#F59E0B 0%, #FB7185 100%);">
+                <div class="text-xs uppercase tracking-widest font-bold text-ink-900/70">Typical launch</div>
+                <div class="mt-2 text-3xl font-display font-extrabold text-ink-900">7 days</div>
+                <p class="mt-2 text-sm text-ink-900/80">From brief to embedded teammate.</p>
+              </div>
+              <div class="rounded-3xl p-6 bg-white shadow-soft border border-line">
+                <div class="flex items-center gap-2 text-ink-500 text-xs uppercase tracking-widest font-bold">
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-sun fill-current"></i>
+                  Loved by founders
+                </div>
+                <div class="mt-2 text-2xl font-display font-extrabold text-ink-900">"They just get it."</div>
+                <p class="mt-2 text-sm text-ink-500">— Operator at a Series A SaaS team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGO STRIP -->
+    <section aria-label="Trusted by" class="bg-white py-10 border-y border-line">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-xs sm:text-sm uppercase tracking-[.22em] text-ink-500 font-bold">
+          Quietly powering the back-office of growing teams
+        </p>
+        <div class="mt-6 overflow-hidden">
+          <div class="flex gap-12 marquee-track whitespace-nowrap items-center">
+            <div class="flex gap-12 items-center shrink-0">
+              <span class="text-2xl font-display font-extrabold text-ink-300">NORTHSTAR</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">Meridian&Co</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">VANTAGE</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">harborline</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">QUARRY+ROW</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">Bluestone</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">ATLAS GLOBAL</span>
+            </div>
+            <div class="flex gap-12 items-center shrink-0" aria-hidden="true">
+              <span class="text-2xl font-display font-extrabold text-ink-300">NORTHSTAR</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">Meridian&Co</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">VANTAGE</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">harborline</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">QUARRY+ROW</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">Bluestone</span>
+              <span class="text-2xl font-display font-extrabold text-ink-300">ATLAS GLOBAL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES BENTO -->
+    <section id="services" class="py-20 lg:py-28 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl reveal">
+          <span class="chip"><span class="chip-dot bg-brand-500"></span>Service tracks</span>
+          <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl lg:text-6xl leading-[1.05]">
+            Service tracks built for <span class="text-brand-600">modern teams</span>.
+          </h2>
+          <p class="mt-5 text-lg text-ink-500">
+            Start with the function you need most. We shape support around the workflow, coverage window, and communication style your team already runs on.
+          </p>
+        </div>
+
+        <!-- Bento grid: 12 col, asymmetric -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-12 gap-5">
+
+          <!-- Executive Assistance (large, brand) -->
+          <article class="md:col-span-7 lift rounded-3xl p-7 sm:p-9 text-white relative overflow-hidden" style="background: linear-gradient(135deg,#2563EB 0%, #1E40AF 100%);">
+            <div class="absolute -top-12 -right-12 w-56 h-56 rounded-full bg-white/10 blur-2xl" aria-hidden="true"></div>
+            <div class="relative">
+              <div class="flex items-center justify-between">
+                <span class="icon-pad bg-white/15 text-white"><i data-lucide="inbox" class="w-7 h-7"></i></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-white/80">01 / Executive Assistance</span>
+              </div>
+              <h3 class="mt-6 font-display font-extrabold text-3xl sm:text-4xl">Inbox, calendar, admin, and follow-through — handled with precision.</h3>
+              <p class="mt-3 text-white/85 max-w-xl">Dedicated executive assistants who manage inboxes, calendars, reporting, travel coordination, SOP upkeep, and recurring admin so founders and operators can stay focused on growth.</p>
+
+              <div class="mt-6 grid sm:grid-cols-2 gap-2 text-sm">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sun"></i> Calendar &amp; inbox management</div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sun"></i> Reporting &amp; documentation</div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sun"></i> Research &amp; coordination</div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sun"></i> Executive support pods</div>
+              </div>
+
+              <div class="mt-7 flex flex-wrap items-center gap-3 text-xs">
+                <span class="rounded-full bg-white/15 px-3 py-1.5 font-semibold">Coverage · AU / US</span>
+                <span class="rounded-full bg-white/15 px-3 py-1.5 font-semibold">Typical launch · 7 days</span>
+                <a href="#contact" class="ml-auto inline-flex items-center gap-1.5 font-bold text-sun hover:translate-x-0.5 transition">Request this service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Marketing Support (pink) -->
+          <article class="md:col-span-5 lift rounded-3xl p-7 sm:p-8 relative overflow-hidden bg-white border border-line">
+            <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full" style="background: radial-gradient(circle,#CFFAFE, transparent 70%);"></div>
+            <div class="relative">
+              <div class="flex items-center justify-between">
+                <span class="icon-pad bg-pinkpop/10 text-pinkpop"><i data-lucide="megaphone" class="w-7 h-7"></i></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-ink-300">02 / Marketing Support</span>
+              </div>
+              <h3 class="mt-6 font-display font-extrabold text-2xl sm:text-3xl text-ink-900">Execution support for campaigns, outreach, and launch coordination.</h3>
+              <p class="mt-3 text-ink-500">Flexible support for marketing teams that need help with campaign coordination, CRM updates, social scheduling, reporting, research, and recurring execution work.</p>
+
+              <ul class="mt-5 space-y-1.5 text-sm text-ink-700">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pinkpop"></i> Campaign coordination</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pinkpop"></i> Social &amp; email scheduling</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pinkpop"></i> Marketing admin &amp; reporting</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pinkpop"></i> Research &amp; list preparation</li>
+              </ul>
+
+              <div class="mt-6 flex flex-wrap items-center gap-3 text-xs">
+                <span class="rounded-full bg-pinkpop/10 text-pinkpop px-3 py-1.5 font-semibold">Campaign rhythm · Weekly</span>
+                <span class="rounded-full bg-mist text-brand-700 px-3 py-1.5 font-semibold">Ramp · 2 weeks</span>
+              </div>
+              <a href="#contact" class="mt-5 inline-flex items-center gap-1.5 font-bold text-pinkpop hover:translate-x-0.5 transition">Request this service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+
+          <!-- Content Creation (sun) -->
+          <article class="md:col-span-5 lift rounded-3xl p-7 sm:p-8 relative overflow-hidden" style="background:linear-gradient(135deg,#EFF6FF 0%, #DBEAFE 100%);">
+            <div class="relative">
+              <div class="flex items-center justify-between">
+                <span class="icon-pad bg-white text-ink-900 shadow-soft"><i data-lucide="pen-tool" class="w-7 h-7" style="color:#0E7490;"></i></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-ink-700/70">03 / Content Creation</span>
+              </div>
+              <h3 class="mt-6 font-display font-extrabold text-2xl sm:text-3xl text-ink-900">Production support for copy, visuals, publishing, and creative handoff.</h3>
+              <p class="mt-3 text-ink-700/85">Content support for founders and teams that need writing assistance, asset preparation, publishing help, repurposing, and dependable production follow-through.</p>
+
+              <ul class="mt-5 space-y-1.5 text-sm text-ink-900">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4" style="color:#0E7490;"></i> Content drafting support</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4" style="color:#0E7490;"></i> Asset preparation</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4" style="color:#0E7490;"></i> Repurposing workflows</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4" style="color:#0E7490;"></i> Publishing coordination</li>
+              </ul>
+
+              <div class="mt-6 flex flex-wrap items-center gap-3 text-xs">
+                <span class="rounded-full bg-white/70 text-ink-900 px-3 py-1.5 font-semibold">Outputs · Copy / Visuals</span>
+                <span class="rounded-full bg-white/70 text-ink-900 px-3 py-1.5 font-semibold">Use cases · B2B / Agency</span>
+              </div>
+              <a href="#contact" class="mt-5 inline-flex items-center gap-1.5 font-bold text-ink-900 hover:translate-x-0.5 transition" style="color:#0E7490;">Request this service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+
+          <!-- AI Operations (sky / dark) -->
+          <article class="md:col-span-7 lift rounded-3xl p-7 sm:p-9 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0E0F1A 0%, #2C2E45 100%);">
+            <div class="absolute -bottom-16 -right-16 w-72 h-72 rounded-full" style="background: radial-gradient(circle, rgba(54,204,255,.5), transparent 70%);"></div>
+            <div class="relative">
+              <div class="flex items-center justify-between">
+                <span class="icon-pad bg-sky/15 text-sky"><i data-lucide="bot" class="w-7 h-7"></i></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-white/70">04 / AI Operations</span>
+              </div>
+              <h3 class="mt-6 font-display font-extrabold text-3xl sm:text-4xl">Human-led AI workflow support for research, systems, prompts, and repeatable ops.</h3>
+              <p class="mt-3 text-white/80 max-w-xl">Operational support for teams adopting AI into day-to-day work, including prompt libraries, workflow documentation, QA checks, knowledge-base upkeep, and tool coordination.</p>
+
+              <div class="mt-6 grid sm:grid-cols-2 gap-2 text-sm">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky"></i> Prompt &amp; SOP libraries</div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky"></i> AI workflow coordination</div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky"></i> Research &amp; synthesis support</div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky"></i> Quality &amp; knowledge maintenance</div>
+              </div>
+
+              <div class="mt-7 flex flex-wrap items-center gap-3 text-xs">
+                <span class="rounded-full bg-white/10 px-3 py-1.5 font-semibold">Workflow type · Ops / Research</span>
+                <span class="rounded-full bg-white/10 px-3 py-1.5 font-semibold">Team fit · Founders / Ops</span>
+                <a href="#contact" class="ml-auto inline-flex items-center gap-1.5 font-bold text-sky hover:translate-x-0.5 transition">Request this service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-end">
+          <div class="lg:col-span-7 reveal">
+            <span class="chip"><span class="chip-dot bg-pinkpop"></span>How we work</span>
+            <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl lg:text-6xl leading-[1.05]">
+              From brief to <span class="script text-pinkpop text-5xl sm:text-7xl">embedded</span> teammate in a week.
+            </h2>
+          </div>
+          <div class="lg:col-span-5 reveal">
+            <p class="text-ink-500 text-lg">A simple, predictable rhythm. We listen first, match second, and build the operating cadence with you in week one.</p>
+          </div>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="lift rounded-3xl bg-cream border border-line p-6 reveal">
+            <span class="icon-pad bg-brand-500 text-white">01</span>
+            <h3 class="mt-4 font-display font-extrabold text-xl text-ink-900">Brief</h3>
+            <p class="mt-2 text-ink-500 text-sm">Tell us the workflow you want supported, the coverage window, and the communication style your team already runs on.</p>
+          </div>
+          <div class="lift rounded-3xl bg-cream border border-line p-6 reveal">
+            <span class="icon-pad bg-pinkpop text-white">02</span>
+            <h3 class="mt-4 font-display font-extrabold text-xl text-ink-900">Match</h3>
+            <p class="mt-2 text-ink-500 text-sm">We shortlist 2–3 specialists shaped to the brief. You meet them, choose, and confirm scope and rhythm.</p>
+          </div>
+          <div class="lift rounded-3xl bg-cream border border-line p-6 reveal">
+            <span class="icon-pad text-ink-900" style="background:#F59E0B;">03</span>
+            <h3 class="mt-4 font-display font-extrabold text-xl text-ink-900">Onboard</h3>
+            <p class="mt-2 text-ink-500 text-sm">SOPs, tools, access. By day five your teammate is shipping work — not asking where things live.</p>
+          </div>
+          <div class="lift rounded-3xl bg-cream border border-line p-6 reveal">
+            <span class="icon-pad text-white" style="background:#06B6D4;">04</span>
+            <h3 class="mt-4 font-display font-extrabold text-xl text-ink-900">Operate</h3>
+            <p class="mt-2 text-ink-500 text-sm">Weekly cadence, monthly reviews. Need to grow the pod? Add specialists in days, not months.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG STATS -->
+    <section class="py-20 lg:py-24 bg-ink-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="reveal"><div class="text-5xl sm:text-6xl font-display font-extrabold text-sun">7d</div><p class="mt-2 text-white/70">Typical launch from brief to embedded teammate.</p></div>
+        <div class="reveal"><div class="text-5xl sm:text-6xl font-display font-extrabold text-pinkpop">200+</div><p class="mt-2 text-white/70">Founders &amp; operators we quietly support every week.</p></div>
+        <div class="reveal"><div class="text-5xl sm:text-6xl font-display font-extrabold text-sky">AU/US</div><p class="mt-2 text-white/70">Coverage windows, 7 days, time-zone aligned.</p></div>
+        <div class="reveal"><div class="text-5xl sm:text-6xl font-display font-extrabold text-mint">5★</div><p class="mt-2 text-white/70">Average client rating across active engagements.</p></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="py-20 lg:py-28 bg-cream">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <span class="chip"><span class="chip-dot bg-sun"></span>Loved by operators</span>
+        <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl">"It feels less like outsourcing — more like <span class="text-brand-600">a teammate who just gets it</span>."</h2>
+        <p class="mt-5 text-ink-500 text-lg">Most clients tell us the same thing: the support is dependable, the communication is human, and the brief-to-launch is faster than they expected.</p>
+        <div class="mt-8 flex items-center justify-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-brand-500 text-white grid place-content-center font-display font-bold">PL</span>
+          <span class="text-sm text-ink-500"><span class="font-semibold text-ink-900">Priya L.</span> · Founder, Series A SaaS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="py-16 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative rounded-[2rem] p-8 sm:p-12 lg:p-16 overflow-hidden text-white" style="background: linear-gradient(135deg,#2563EB 0%, #06B6D4 60%, #F59E0B 110%);">
+          <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/15 blur-3xl" aria-hidden="true"></div>
+          <div class="relative grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 reveal">
+              <h2 class="font-extrabold text-3xl sm:text-5xl leading-[1.05]">One brief. <span class="script text-white/95 text-5xl sm:text-7xl">One week.</span> The right team in your corner.</h2>
+              <p class="mt-4 text-white/90 max-w-2xl text-lg">Tell us the workflow you want supported. We'll come back with a shortlist tailored to your team — usually the same day.</p>
+            </div>
+            <div class="lg:col-span-4 flex lg:justify-end reveal">
+              <a href="#contact" class="btn btn-dark">Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 lg:py-28 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div class="lg:col-span-5 reveal">
+            <span class="chip"><span class="chip-dot bg-mint"></span>Connect to support</span>
+            <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl leading-[1.05]">
+              Tell us the brief. <br/>We'll match the <span class="text-brand-600">team</span>.
+            </h2>
+            <p class="mt-5 text-ink-500 text-lg">A short note is enough to start. We reply with two or three options shaped around your workflow, coverage and communication style.</p>
+
+            <ul class="mt-8 space-y-4 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="icon-pad bg-brand-50 text-brand-600 w-10 h-10 rounded-xl"><i data-lucide="mail" class="w-5 h-5"></i></span>
+                <div>
+                  <div class="font-bold text-ink-900">info@sngroup.com.au</div>
+                  <div class="text-ink-500">Replies within one business day.</div>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="icon-pad bg-pinkpop/10 text-pinkpop w-10 h-10 rounded-xl"><i data-lucide="clock" class="w-5 h-5"></i></span>
+                <div>
+                  <div class="font-bold text-ink-900">7-day launch</div>
+                  <div class="text-ink-500">From brief to embedded teammate.</div>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="icon-pad bg-sun/15 w-10 h-10 rounded-xl" style="color:#0E7490;"><i data-lucide="globe" class="w-5 h-5"></i></span>
+                <div>
+                  <div class="font-bold text-ink-900">AU / US coverage</div>
+                  <div class="text-ink-500">Time-zone aligned, 7 days a week.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-7 reveal">
+            <form id="contactForm" class="bg-white rounded-3xl border border-line p-6 sm:p-8 shadow-soft" novalidate>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="text-sm font-semibold text-ink-900">Full name</label>
+                  <input id="name" name="name" type="text" required class="input mt-1.5" placeholder="Jane Doe" />
+                </div>
+                <div>
+                  <label for="company" class="text-sm font-semibold text-ink-900">Company</label>
+                  <input id="company" name="company" type="text" class="input mt-1.5" placeholder="Acme Pty Ltd" />
+                </div>
+                <div>
+                  <label for="email" class="text-sm font-semibold text-ink-900">Work email</label>
+                  <input id="email" name="email" type="email" required class="input mt-1.5" placeholder="jane@company.com" />
+                </div>
+                <div>
+                  <label for="phone" class="text-sm font-semibold text-ink-900">Phone (optional)</label>
+                  <input id="phone" name="phone" type="tel" class="input mt-1.5" placeholder="+61 4 0000 0000" />
+                </div>
+                <div>
+                  <label for="service" class="text-sm font-semibold text-ink-900">Service track</label>
+                  <select id="service" name="service" class="input mt-1.5">
+                    <option>Executive Assistance</option>
+                    <option>Marketing Support</option>
+                    <option>Content Creation</option>
+                    <option>AI Operations</option>
+                    <option>Not sure yet — help me decide</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="hours" class="text-sm font-semibold text-ink-900">Hours per week</label>
+                  <select id="hours" name="hours" class="input mt-1.5">
+                    <option>Part-time (10–20 hrs)</option>
+                    <option>Half-time (20–30 hrs)</option>
+                    <option>Full-time (40 hrs)</option>
+                    <option>A whole pod</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="message" class="text-sm font-semibold text-ink-900">The workflow you want supported</label>
+                  <textarea id="message" name="message" rows="4" class="input mt-1.5" placeholder="e.g. inbox & calendar for our CEO, plus Notion SOP upkeep — we use Slack and Google Workspace..."></textarea>
+                </div>
+              </div>
+              <div class="mt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <p class="text-xs text-ink-500 max-w-sm">We reply with a tailored shortlist — usually the same business day.</p>
+                <button type="submit" class="btn btn-primary">
+                  Send my brief <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <div id="formMessage" class="mt-4 hidden rounded-2xl bg-mint/15 border border-mint/40 text-emerald-800 px-4 py-3 text-sm font-semibold">
+                Brief received. A senior matcher will reach out within one business day.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5">
+          <a href="#top" class="flex items-center gap-2.5">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl text-white font-display font-extrabold" style="background: linear-gradient(135deg,#2563EB 0%,#06B6D4 100%);">SN</span>
+            <span class="font-display font-extrabold text-white text-lg">SN International <span class="text-brand-300">Group</span></span>
+          </a>
+          <p class="mt-4 text-white/70 max-w-sm">Remote support teams, matched with care. Executive Assistance, Marketing Support, Content Creation, and AI Operations — built around your workflow.</p>
+          <a href="#contact" class="mt-6 inline-flex btn btn-primary">Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Services</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="#services" class="hover:text-white">Executive Assistance</a></li>
+            <li><a href="#services" class="hover:text-white">Marketing Support</a></li>
+            <li><a href="#services" class="hover:text-white">Content Creation</a></li>
+            <li><a href="#services" class="hover:text-white">AI Operations</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Quick links</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="#top" class="hover:text-white">Home</a></li>
+            <li><a href="#" class="hover:text-white">About Us</a></li>
+            <li><a href="#" class="hover:text-white">Meet the Team</a></li>
+            <li><a href="#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Contact</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="mailto:info@sngroup.com.au" class="hover:text-white">info@sngroup.com.au</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/55">
+        <p>© <span id="year"></span> SN International Group. All rights reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+          <a href="#" class="hover:text-white">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMessage');
+    form?.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      if (!name || !email) { alert('Please add your name and email so we can reach you.'); return; }
+      msg.classList.remove('hidden');
+      form.reset();
+      msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</body>
+</html>
