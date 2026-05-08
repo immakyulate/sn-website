@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet the team behind SN International Group — 17 people building reliable remote support across executive assistance, marketing, content, and AI operations." />
+  <title>Meet the Team — SN International Group</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          brand: { 50:'#EFF6FF',100:'#DBEAFE',200:'#BFDBFE',300:'#93C5FD',400:'#60A5FA',500:'#3B82F6',600:'#2563EB',700:'#1D4ED8',800:'#1E40AF',900:'#0F1F4F' },
+          pinkpop:'#F97316', coral:'#FF6B6B', sun:'#F59E0B', sky:'#06B6D4', mint:'#10B981',
+          ink:{900:'#0E1F26',800:'#1A1B2E',700:'#2C2E45',500:'#5C607A',300:'#A6A9BC'},
+          cream:'#F8FBFF', mist:'#E0F2FE', line:'#DCE7F5'
+        },
+        fontFamily: { display:['"Plus Jakarta Sans"','system-ui','sans-serif'], sans:['Inter','system-ui','sans-serif'], script:['Caveat','cursive'] },
+        boxShadow: {
+          pop:'0 14px 40px -10px rgba(37,99,235,0.35)',
+          soft:'0 1px 2px rgba(10,20,40,.04), 0 12px 36px -12px rgba(10,30,80,.12)',
+          ring:'0 0 0 1px #DCE7F5, 0 24px 60px -24px rgba(15,31,79,.25)'
+        }
+      } }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, sans-serif; color:#1A1B2E; background:#fff; -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4,.font-display { font-family:'Plus Jakarta Sans',system-ui,sans-serif; letter-spacing:-.02em; }
+    .script { font-family:Caveat,cursive; font-weight:700; }
+    .reveal { opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity:1; transform:none; }
+    .lift { transition: transform .25s ease, box-shadow .25s ease; }
+    .lift:hover { transform: translateY(-4px); box-shadow: 0 22px 46px -22px rgba(15,31,79,.22); }
+
+    .btn { display:inline-flex; align-items:center; gap:.55rem; padding:.95rem 1.4rem; border-radius:.85rem; font-weight:700; font-size:.95rem; transition: transform .15s ease, background-color .2s, color .2s, box-shadow .2s; }
+    .btn-primary { background: linear-gradient(135deg,#19414D 0%,#06B6D4 100%); color:#fff; box-shadow: 0 14px 30px -8px rgba(25,65,77,.5); }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-dark { background:#0E1F26; color:#fff; }
+    .btn-dark:hover { background:#1A1B2E; transform: translateY(-1px); }
+    .btn-outline { background:#fff; color:#1A1B2E; border:1px solid #DCE7F5; }
+    .btn-outline:hover { border-color:#19414D; color:#19414D; }
+    .btn-ghost { color:#1A1B2E; }
+    .btn-ghost:hover { color:#19414D; }
+
+    .chip { display:inline-flex; align-items:center; gap:.45rem; padding:.55rem .9rem; border-radius:9999px; background:#fff; border:1px solid #DCE7F5; font-weight:600; font-size:.85rem; color:#2C2E45; transition: border-color .2s, transform .15s, box-shadow .2s; }
+    .chip:hover { border-color:#19414D; color:#19414D; transform: translateY(-1px); box-shadow: 0 6px 18px -6px rgba(25,65,77,.35); }
+    .chip-dot { width:.6rem; height:.6rem; border-radius:9999px; }
+
+    .icon-pad { display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:14px; }
+
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { animation: marquee 32s linear infinite; }
+
+    #mobileMenu { transition: max-height .35s ease, opacity .25s ease; max-height:0; overflow:hidden; opacity:0; }
+    #mobileMenu.open { max-height:680px; opacity:1; }
+
+    section { scroll-margin-top: 84px; }
+    @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } .reveal { opacity:1; transform:none; transition:none; } }
+
+    .page-hero {
+      background:
+        radial-gradient(700px 360px at 88% 14%, rgba(6,182,212,.18), transparent 60%),
+        radial-gradient(640px 360px at 8% 18%, rgba(25,65,77,.20), transparent 60%),
+        linear-gradient(180deg,#F8FBFF 0%,#EFF6FF 100%);
+    }
+
+    /* Featured profile poster styling */
+    .poster-bg {
+      background:
+        radial-gradient(500px 300px at 12% 18%, rgba(255,200,61,.18), transparent 60%),
+        radial-gradient(500px 320px at 88% 12%, rgba(6,182,212,.14), transparent 60%),
+        radial-gradient(500px 320px at 50% 100%, rgba(255,107,107,.10), transparent 60%),
+        #FFFCF6;
+    }
+    .doodle-card {
+      background:#fff; border:1px solid #F0E9D8; border-radius:18px;
+      box-shadow: 0 8px 22px -10px rgba(40,30,10,.18);
+      transform: rotate(var(--r, 0deg));
+    }
+    .tape::before {
+      content:""; position:absolute; top:-10px; left:50%; transform:translateX(-50%) rotate(-3deg);
+      width:54px; height:14px; background:rgba(255,200,61,.55); border-radius:2px;
+    }
+
+    .photo-frame {
+      position: relative; aspect-ratio: 3/4; border-radius: 22px; overflow: hidden;
+      background: linear-gradient(135deg,#19414D 0%, #2A6F84 100%);
+      box-shadow: 0 18px 40px -16px rgba(25,65,77,.45);
+    }
+    .photo-frame img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .photo-frame .fallback { position:absolute; inset:0; display:grid; place-content:center; }
+  </style>
+</head>
+<body>
+
+  <div class="bg-ink-900 text-white text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+      <p class="hidden sm:flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sun"></i>
+        <span>Now matching teams in 7 days for AU & US founders.</span>
+      </p>
+      <p class="sm:hidden flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sun"></i>
+        <span>Matched in 7 days.</span>
+      </p>
+      <a href="index.html#contact" class="inline-flex items-center gap-1.5 hover:text-sun transition">
+        <span class="hidden sm:inline">Connect to support</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-18">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="inline-block w-9 h-9 shrink-0" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full"><defs><linearGradient id="snBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1F5763"/><stop offset="55%" stop-color="#19414D"/><stop offset="100%" stop-color="#0A1C21"/></linearGradient><linearGradient id="snMetal" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="55%" stop-color="#B8DAE2"/><stop offset="100%" stop-color="#5C8893"/></linearGradient></defs><rect x="2" y="2" width="96" height="96" rx="22" fill="url(#snBg)"/><rect x="2" y="2" width="96" height="96" rx="22" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/><text x="50" y="69" text-anchor="middle" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-weight="800" font-size="50" letter-spacing="-3" fill="url(#snMetal)">SN</text></svg></span>
+          <span class="font-display font-extrabold text-ink-900 text-lg hidden sm:inline">SN International <span style="color:#19414D;">Group</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-ink-700">
+          <a href="index.html" class="hover:opacity-80 transition">Home</a>
+          <a href="services.html" class="hover:opacity-80 transition">Services</a>
+          <a href="about.html" class="hover:opacity-80 transition">About Us</a>
+          <a href="team.html" style="color:#19414D;">Meet the Team</a>
+          <a href="index.html#contact" class="hover:opacity-80 transition">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#" class="btn btn-ghost">Log in</a>
+          <a href="index.html#contact" class="btn btn-primary">Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+
+        <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-ink-900 hover:bg-mist" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="lg:hidden">
+        <div class="pb-4 pt-1 space-y-1 text-sm font-semibold">
+          <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Home</a>
+          <a href="services.html" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Services</a>
+          <a href="about.html" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">About Us</a>
+          <a href="team.html" class="block px-3 py-2 rounded-lg hover:bg-mist" style="color:#19414D;">Meet the Team</a>
+          <a href="index.html#contact" class="block px-3 py-2 rounded-lg hover:bg-mist text-ink-700">Contact</a>
+          <a href="index.html#contact" class="btn btn-primary w-full justify-center mt-2">Connect to support</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden page-hero pt-14 pb-14 lg:pt-20 lg:pb-16">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl reveal">
+          <span class="chip"><span class="chip-dot bg-mint"></span>Meet the team</span>
+          <h1 class="mt-4 font-extrabold text-ink-900 text-4xl sm:text-6xl lg:text-7xl leading-[1.05]">
+            <span class="script text-5xl sm:text-7xl lg:text-8xl align-middle" style="color:#19414D;">17</span> people building reliable support behind SN International.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-ink-500 max-w-2xl">
+            Leadership, specialists, and interns working across executive support, marketing, content, operations, and AI-driven workflow delivery.
+          </p>
+        </div>
+
+        <!-- Stats band -->
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="lift rounded-3xl p-6 reveal text-white relative overflow-hidden" style="background:linear-gradient(135deg,#19414D 0%, #2A6F84 100%);">
+            <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-white/10 blur-xl" aria-hidden="true"></div>
+            <div class="relative">
+              <div class="text-5xl font-display font-extrabold">2</div>
+              <div class="mt-2 font-display font-bold">Executive Leaders</div>
+              <p class="mt-1 text-sm text-white/80">Setting direction, standards, and the operating cadence behind the business.</p>
+            </div>
+          </div>
+          <div class="lift rounded-3xl p-6 bg-white border border-line reveal">
+            <div class="text-5xl font-display font-extrabold" style="color:#19414D;">6</div>
+            <div class="mt-2 font-display font-bold text-ink-900">Core Staff</div>
+            <p class="mt-1 text-sm text-ink-500">Specialists supporting creative output, administration, HR, and day-to-day execution.</p>
+          </div>
+          <div class="lift rounded-3xl p-6 reveal relative overflow-hidden" style="background:linear-gradient(135deg,#FFEDD5 0%, #FED7AA 100%);">
+            <div class="text-5xl font-display font-extrabold text-ink-900">9</div>
+            <div class="mt-2 font-display font-bold text-ink-900">Active Interns</div>
+            <p class="mt-1 text-sm text-ink-900/75">Contributors across AI, admin, content, HR, and marketing work.</p>
+          </div>
+          <div class="lift rounded-3xl p-6 reveal text-white relative overflow-hidden" style="background:linear-gradient(135deg,#06B6D4 0%, #0EA5E9 100%);">
+            <div class="absolute -bottom-6 -left-6 w-28 h-28 rounded-full bg-white/15 blur-xl" aria-hidden="true"></div>
+            <div class="relative">
+              <div class="text-5xl font-display font-extrabold">6</div>
+              <div class="mt-2 font-display font-bold">Departments</div>
+              <p class="mt-1 text-sm text-white/85">A cross-functional group driving delivery quality and workflow support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE LEADERSHIP -->
+    <section class="py-14 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <span class="chip"><span class="chip-dot" style="background:#19414D;"></span>Executive Leadership</span>
+          <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl leading-[1.1]">
+            The senior team setting <span style="color:#19414D;">direction and culture</span>.
+          </h2>
+        </div>
+
+        <!-- STEVEN — featured "poster" -->
+        <article class="mt-10 rounded-[28px] poster-bg border border-line shadow-soft overflow-hidden reveal">
+          <div class="grid lg:grid-cols-12 gap-0 lg:gap-2">
+            <!-- Photo column -->
+            <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10">
+              <div class="relative max-w-sm mx-auto lg:mx-0">
+                <!-- Decorative doodles -->
+                <svg class="absolute -top-6 -left-8 w-20 h-20 text-ink-700/70 hidden sm:block" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+                  <path d="M10,55 Q20,30 40,38 Q56,44 60,28 Q66,8 80,16 Q94,24 90,42"/>
+                  <path d="M84,42 L90,42 L90,36"/>
+                </svg>
+                <svg class="absolute -bottom-6 -right-6 w-14 h-14" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                  <path d="M12 2l1.6 6.2L20 10l-6.4 1.8L12 18l-1.6-6.2L4 10l6.4-1.8L12 2z"/>
+                </svg>
+
+                <div class="photo-frame">
+                  <img src="team/steven-nhan.png" alt="Steven Nhan, Chief Executive Officer"/>
+                </div>
+
+                <!-- Name plate -->
+                <div class="mt-6 text-center lg:text-left">
+                  <div class="script text-5xl sm:text-6xl text-ink-900 leading-none">Steven Nhan</div>
+                  <div class="mt-2 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest" style="color:#19414D;">
+                    Chief Executive Officer
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Annotations column -->
+            <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 lg:pl-2 relative">
+              <!-- Annotations grid -->
+              <div class="grid sm:grid-cols-2 gap-4 sm:gap-5 relative">
+
+                <div class="doodle-card p-5" style="--r:-1.5deg;">
+                  <div class="text-xs uppercase tracking-widest font-bold" style="color:#19414D;">Currently building</div>
+                  <p class="mt-2 script text-2xl text-ink-900 leading-snug">Multiple businesses across health, property, and food.</p>
+                </div>
+
+                <div class="doodle-card p-5" style="--r:1.5deg;">
+                  <div class="text-xs uppercase tracking-widest font-bold text-sky">Always exploring</div>
+                  <p class="mt-2 script text-2xl text-ink-900 leading-snug">AI tools and automation to streamline workflows and save time.</p>
+                </div>
+
+                <div class="doodle-card p-5 relative tape sm:col-span-2" style="--r:-0.8deg; background: linear-gradient(135deg,#FFFBEB 0%, #FEF3C7 100%); border-color:#FDE68A;">
+                  <div class="text-xs uppercase tracking-widest font-bold" style="color:#92400E;">North star</div>
+                  <p class="mt-2 script text-2xl text-ink-900 leading-snug">Passionate about helping busy business owners improve their health <span class="script text-pinkpop">without overcomplicating it</span>.</p>
+                </div>
+
+                <div class="doodle-card p-5" style="--r:-1deg;">
+                  <div class="text-xs uppercase tracking-widest font-bold text-pinkpop">Off the clock</div>
+                  <p class="mt-2 script text-2xl text-ink-900 leading-snug">Dad of <span class="text-pinkpop">2 girls</span> &mdash; values meaningful family experiences and memories.</p>
+                </div>
+
+                <div class="doodle-card p-5 flex items-center gap-3" style="--r:1.2deg;">
+                  <span class="icon-pad text-white shrink-0" style="background:linear-gradient(135deg,#19414D 0%, #06B6D4 100%); width:42px; height:42px;"><i data-lucide="quote" class="w-5 h-5"></i></span>
+                  <p class="text-sm text-ink-700 italic">&ldquo;Founder and visionary behind SN International Group, driving strategy and growth across the business.&rdquo;</p>
+                </div>
+
+              </div>
+
+              <!-- Subtle hand-drawn arrow connecting doodles -->
+              <svg class="absolute -bottom-2 right-6 w-16 h-16 text-ink-700/60 hidden lg:block" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M8,12 Q24,8 40,28 Q52,44 56,52"/>
+                <path d="M50,46 L56,52 L48,54"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- MAY — featured "poster" -->
+        <article class="mt-10 rounded-[28px] poster-bg border border-line shadow-soft overflow-hidden reveal">
+          <div class="grid lg:grid-cols-12 gap-0 lg:gap-2">
+            <!-- Photo column -->
+            <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10">
+              <div class="relative max-w-sm mx-auto lg:mx-0">
+                <!-- Decorative doodles -->
+                <svg class="absolute -top-4 -left-6 w-16 h-16 text-ink-700/70 hidden sm:block" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+                  <path d="M14,68 Q22,40 42,46 Q60,52 64,32 Q70,12 86,20"/>
+                  <path d="M82,28 L86,20 L80,16"/>
+                </svg>
+                <svg class="absolute -bottom-4 -right-4 w-12 h-12" viewBox="0 0 24 24" fill="#FB7185" aria-hidden="true">
+                  <path d="M12 21s-7-4.35-7-10a5 5 0 019-3 5 5 0 019 3c0 5.65-7 10-7 10h-4z"/>
+                </svg>
+
+                <div class="photo-frame">
+                  <img src="team/may-layugan.png" alt="May Layugan, Chief Operating Officer" loading="lazy"/>
+                </div>
+
+                <!-- Name plate -->
+                <div class="mt-6 text-center lg:text-left">
+                  <div class="script text-5xl sm:text-6xl text-ink-900 leading-none">May Layugan</div>
+                  <div class="mt-2 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest" style="color:#0E7490;">
+                    Chief Operating Officer
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Annotations column -->
+            <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 lg:pl-2 relative">
+              <div class="grid sm:grid-cols-2 gap-4 sm:gap-5 relative">
+
+                <div class="doodle-card p-5" style="--r:-1.5deg;">
+                  <div class="text-xs uppercase tracking-widest font-bold" style="color:#0E7490;">Stays sharp</div>
+                  <p class="mt-2 script text-2xl text-ink-900 leading-snug">Loves <span class="text-pinkpop">working out</span> &mdash; consistency over intensity.</p>
+                </div>
+
+                <div class="doodle-card p-5" style="--r:1.5deg;">
+                  <div class="text-xs uppercase tracking-widest font-bold text-pinkpop">Combat sport</div>
+                  <p class="mt-2 script text-2xl text-ink-900 leading-snug">Muay thai &amp; combat sports &mdash; respect the discipline.</p>
+                </div>
+
+                <div class="doodle-card p-5 relative tape sm:col-span-2" style="--r:-0.8deg; background: linear-gradient(135deg,#FFFBEB 0%, #FEF3C7 100%); border-color:#FDE68A;">
+                  <div class="text-xs uppercase tracking-widest font-bold" style="color:#92400E;">Always watching</div>
+                  <p class="mt-2 script text-2xl text-ink-900 leading-snug">Into <span class="script text-pinkpop">crime and historical documentaries</span> &mdash; there's always a pattern hiding in the details.</p>
+                </div>
+
+                <div class="doodle-card p-5" style="--r:-1deg;">
+                  <div class="text-xs uppercase tracking-widest font-bold text-sky">For fun</div>
+                  <p class="mt-2 script text-2xl text-ink-900 leading-snug">Enjoys <span class="text-sky">puzzles</span> and building gundams.</p>
+                </div>
+
+                <div class="doodle-card p-5 flex items-center gap-3" style="--r:1.2deg;">
+                  <span class="icon-pad text-white shrink-0" style="background:linear-gradient(135deg,#0EA5E9 0%, #19414D 100%); width:42px; height:42px;"><i data-lucide="quote" class="w-5 h-5"></i></span>
+                  <p class="text-sm text-ink-700 italic">&ldquo;Oversees daily operations and ensures the organization runs with precision and efficiency.&rdquo;</p>
+                </div>
+
+              </div>
+
+              <!-- Subtle hand-drawn arrow -->
+              <svg class="absolute -bottom-2 right-6 w-16 h-16 text-ink-700/60 hidden lg:block" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M8,52 Q26,42 38,22 Q48,8 56,12"/>
+                <path d="M50,8 L56,12 L52,18"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STAFF & INTERNS -->
+    <section class="py-20 lg:py-24 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-6 items-end reveal">
+          <div class="lg:col-span-7">
+            <span class="chip"><span class="chip-dot bg-pinkpop"></span>Staff &amp; Intern Team</span>
+            <h2 class="mt-4 font-extrabold text-ink-900 text-3xl sm:text-5xl leading-[1.1]">
+              The daily work, creative output, and <span class="script text-pinkpop text-5xl sm:text-6xl">operational momentum</span>.
+            </h2>
+            <p class="mt-3 text-ink-500">Meet the staff and interns behind the daily work, creative output, and operational momentum across the organization.</p>
+          </div>
+          <div class="lg:col-span-5 lg:text-right">
+            <div class="inline-flex rounded-full bg-white border border-line p-1 text-sm font-bold shadow-soft">
+              <span class="px-4 py-1.5 rounded-full text-white" style="background:#19414D;">Staff &middot; 6</span>
+              <span class="px-4 py-1.5 rounded-full text-ink-500">Interns &middot; 9</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-sm text-ink-500 reveal">Core staff members supporting leadership, marketing, design, HR, and operations.</p>
+
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="lift rounded-3xl bg-white border border-line overflow-hidden reveal">
+            <div class="aspect-[4/5] relative overflow-hidden bg-cream">
+              <img src="team/ariana-ricardo.png" alt="Ariana Ricardo, Personal Assistant to CEO" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <span class="rounded-full bg-brand-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest" style="color:#19414D;">Executive Support</span>
+              <div class="mt-2 font-display font-extrabold text-ink-900">Ariana Ricardo</div>
+              <div class="text-xs text-ink-500">Personal Assistant to CEO</div>
+            </div>
+          </article>
+
+          <article class="lift rounded-3xl bg-white border border-line overflow-hidden reveal">
+            <div class="aspect-[4/5] relative overflow-hidden bg-cream">
+              <img src="team/camille-buquir.png" alt="Camille Buquir, HR Manager" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <span class="rounded-full bg-pinkpop/10 text-pinkpop px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest">Human Resources</span>
+              <div class="mt-2 font-display font-extrabold text-ink-900">Camille &ldquo;Cams&rdquo; Buquir</div>
+              <div class="text-xs text-ink-500">HR Manager</div>
+            </div>
+          </article>
+
+          <article class="lift rounded-3xl bg-white border border-line overflow-hidden reveal">
+            <div class="aspect-[4/5] relative overflow-hidden bg-cream">
+              <img src="team/bianca-ragadio.png" alt="Bianca Ragadio, Google Ads Specialist" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <span class="rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest" style="background:#FEF3C7;color:#92400E;">Marketing</span>
+              <div class="mt-2 font-display font-extrabold text-ink-900">Bianca Ragadio</div>
+              <div class="text-xs text-ink-500">Google Ads Specialist</div>
+            </div>
+          </article>
+
+          <article class="lift rounded-3xl bg-white border border-line overflow-hidden reveal">
+            <div class="aspect-[4/5] relative overflow-hidden bg-cream">
+              <img src="team/lj-cruz.png" alt="Lolita Jonquil Cruz, Meta Ads Specialist" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <span class="rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest" style="background:#FEF3C7;color:#92400E;">Marketing</span>
+              <div class="mt-2 font-display font-extrabold text-ink-900">Lolita Jonquil &ldquo;LJ&rdquo; Cruz</div>
+              <div class="text-xs text-ink-500">Meta Ads Specialist</div>
+            </div>
+          </article>
+
+          <article class="lift rounded-3xl bg-white border border-line overflow-hidden reveal">
+            <div class="aspect-[4/5] relative overflow-hidden bg-cream">
+              <img src="team/patrick-mongaya.png" alt="Patrick Mongaya, Multimedia Specialist" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <span class="rounded-full bg-sky/10 text-sky px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest">Creative</span>
+              <div class="mt-2 font-display font-extrabold text-ink-900">Patrick Mongaya</div>
+              <div class="text-xs text-ink-500">Multimedia Specialist</div>
+            </div>
+          </article>
+
+          <article class="lift rounded-3xl bg-white border border-line overflow-hidden reveal">
+            <div class="aspect-[4/5] relative overflow-hidden bg-cream">
+              <img src="team/john-tulio.png" alt="John Christian Tulio, Digital Content Designer" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <span class="rounded-full bg-sky/10 text-sky px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest">Creative</span>
+              <div class="mt-2 font-display font-extrabold text-ink-900">John Christian Tulio</div>
+              <div class="text-xs text-ink-500">Digital Content Designer</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-10 reveal rounded-3xl bg-white border border-line p-6 sm:p-8 shadow-soft">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+            <span class="icon-pad text-white" style="background:linear-gradient(135deg,#19414D 0%, #06B6D4 100%);"><i data-lucide="graduation-cap" class="w-6 h-6"></i></span>
+            <div class="flex-1">
+              <div class="font-display font-extrabold text-ink-900 text-xl">Plus 9 active interns shipping with us every week</div>
+              <p class="mt-1 text-ink-500 text-sm">Contributors across AI, admin, content, HR, and marketing &mdash; a deliberate part of how we grow the next generation of specialists.</p>
+            </div>
+            <a href="index.html#contact" class="btn btn-primary shrink-0">Get in touch <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="py-16 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative rounded-[2rem] p-8 sm:p-12 lg:p-16 overflow-hidden text-white" style="background: linear-gradient(135deg,#19414D 0%, #06B6D4 55%, #F59E0B 110%);">
+          <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/15 blur-3xl" aria-hidden="true"></div>
+          <div class="relative grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 reveal">
+              <h2 class="font-extrabold text-3xl sm:text-5xl leading-[1.05]">Want to meet <span class="script text-white/95 text-5xl sm:text-7xl">the lead</span> for your engagement?</h2>
+              <p class="mt-4 text-white/90 max-w-2xl text-lg">Tell us the workflow you want supported. We'll come back the same business day with two or three matched specialists shaped to your team.</p>
+            </div>
+            <div class="lg:col-span-4 flex lg:justify-end reveal">
+              <a href="index.html#contact" class="btn btn-dark">Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-ink-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5">
+          <a href="index.html" class="flex items-center gap-2.5">
+            <span class="inline-block w-9 h-9 shrink-0" aria-hidden="true"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full"><defs><linearGradient id="snBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1F5763"/><stop offset="55%" stop-color="#19414D"/><stop offset="100%" stop-color="#0A1C21"/></linearGradient><linearGradient id="snMetal" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="55%" stop-color="#B8DAE2"/><stop offset="100%" stop-color="#5C8893"/></linearGradient></defs><rect x="2" y="2" width="96" height="96" rx="22" fill="url(#snBg)"/><rect x="2" y="2" width="96" height="96" rx="22" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/><text x="50" y="69" text-anchor="middle" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-weight="800" font-size="50" letter-spacing="-3" fill="url(#snMetal)">SN</text></svg></span>
+            <span class="font-display font-extrabold text-white text-lg">SN International <span class="text-brand-300">Group</span></span>
+          </a>
+          <p class="mt-4 text-white/70 max-w-sm">Remote support teams, matched with care. Executive Assistance, Marketing Support, Content Creation, and AI Operations &mdash; built around your workflow.</p>
+          <a href="index.html#contact" class="mt-6 inline-flex btn btn-primary">Connect to support <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <div class="mt-6">
+            <div class="text-xs uppercase tracking-widest text-white/55 font-bold">Follow us</div>
+            <div class="mt-3 flex items-center gap-2">
+              <a href="https://www.linkedin.com/company/sn-international-group/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-10 h-10 grid place-content-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:info@sngroup.com.au" aria-label="Email" class="w-10 h-10 grid place-content-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-3">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Services</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="services.html#executive-assistance" class="hover:text-white">Executive Assistance</a></li>
+            <li><a href="services.html#marketing-support" class="hover:text-white">Marketing Support</a></li>
+            <li><a href="services.html#content-creation" class="hover:text-white">Content Creation</a></li>
+            <li><a href="services.html#ai-operations" class="hover:text-white">AI Operations</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Quick links</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li><a href="about.html" class="hover:text-white">About Us</a></li>
+            <li><a href="team.html" class="hover:text-white">Meet the Team</a></li>
+            <li><a href="index.html#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-display font-bold text-sm uppercase tracking-widest">Contact</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li><a href="mailto:info@sngroup.com.au" class="hover:text-white">info@sngroup.com.au</a></li>
+            <li><a href="https://www.linkedin.com/company/sn-international-group/" target="_blank" rel="noopener" class="hover:text-white">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/55">
+        <p>© <span id="year"></span> SN International Group. All rights reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+          <a href="#" class="hover:text-white">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
